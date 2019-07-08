@@ -54,6 +54,7 @@
       getRegionWithCountry(country) {
         country = country || this.country
         console.log('country: ', country);
+        console.log('upd');
         let countryRegions = regions.find((elem) => {
           if (this.countryName) {
             return elem.countryName === country
