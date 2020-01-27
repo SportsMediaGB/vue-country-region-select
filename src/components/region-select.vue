@@ -59,18 +59,11 @@
           } else {
             return elem.countryShortCode === country
           }
-        }).regions
-        if (this.$i18n && this.usei18n) {
-          countryRegions = countryRegions.map((region) => {
-            let localeRegion = Object.assign({ }, region)
-            localeRegion.name = this.$t(region.name)
-            return localeRegion
-          })
-          countryRegions.sort((region1, region2) => {
-            return (region1.name > region2.name) ? 1 : -1
-          })
+        })
+
+        if(countryRegions) {
+          this.shownRegions = countryRegions.regions;
         }
-        this.shownRegions = countryRegions
       }
     },
     watch: {
